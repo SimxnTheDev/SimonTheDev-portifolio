@@ -1,0 +1,83 @@
+import React from 'react';
+import { TypeAnimation } from 'react-type-animation';
+import { FaYoutube, FaInstagram, FaGithub, FaTiktok, FaTwitter} from 'react-icons/fa';
+import profilePic from '../assets/hero.jpg';
+import { Element } from 'react-scroll';
+import { Fade } from 'react-awesome-reveal';
+import heroBg from '../assets/hero-bg1.jpg';
+
+const Hero = () => {
+  return (
+    <>
+    <Element name='main'>
+    <div className="w-full sm:h-[500px] h-[500px] bg-gray-100 font-body" id='main'>
+        
+        <div className="bg-cover bg-center bg-no-repeat w-full h-full flex sm:flex-row flex-col-reverse justify-center items-center" style={{ backgroundImage: `url(${heroBg})` }}>
+          <div className='sm:w-1/2 w-full px-2 sm:h-3/5 h-2/5 flex flex-col sm:items-end items-center justify-center'>
+              <Fade direction='down' triggerOnce={true}>
+              <h1 className='font-bold text-gray-200 md:text-5xl text-4xl'>
+                I'm Simon Munyala
+              </h1>
+              </Fade>
+              <Fade>
+              <h2 className='flex md:text-3xl text-2xl pt-4 text-white'>
+                I'm a 
+                <TypeAnimation
+                  sequence={[
+                    'Software Developer',
+                    2000,
+                    'Robotics Builder',
+                    2000,
+                    'Automation Engineer',
+                    2000,
+                    'Mechatronics Enthusiast',
+                    2000,
+                    'Systems Developer',
+                    2000,
+                    'Tech Innovator',
+                    2000,
+                    'Problem Solver',
+                    2000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  cursor={true}
+                  repeat={Infinity}
+                  style={{ fontSize: '1em', paddingLeft: '5px'}}
+                />
+              </h2>
+              </Fade>
+              <div className='w-full mt-2 flex gap-5 lg:justify-end justify-center'>
+                <Fade direction='up' triggerOnce={true}>
+                  <a href="https://github.com/SimxnTheDev" target="_blank" rel="noopener noreferrer">
+                    <FaGithub fill='white' size={25} className='shadow-gray-100 hover:scale-105 ease-in duration-150 cursor-pointer'/>
+                  </a>
+                  <a href="https://www.instagram.com/simxnthedev/" target="_blank" rel="noopener noreferrer">
+                    <FaInstagram fill='white' size={25} className='shadow-gray-100 hover:scale-105 ease-in duration-150 cursor-pointer'/>
+                  </a>
+                  <a href="https://www.tiktok.com/@simxnthedev" target="_blank" rel="noopener noreferrer">
+                    <FaTiktok fill='white' size={25} className='shadow-gray-100 hover:scale-105 ease-in duration-150 cursor-pointer'/>
+                  </a>
+                  <a href="https://www.youtube.com/@simxnthedev" target="_blank" rel="noopener noreferrer">
+                    <FaYoutube fill='white' size={25} className='shadow-gray-100 hover:scale-105 ease-in duration-150 cursor-pointer'/>
+                  </a>
+                  <a href="https://x.com/simxnthedev" target="_blank" rel="noopener noreferrer">
+                    <FaTwitter fill='white' size={25} className='shadow-gray-100 hover:scale-105 ease-in duration-150 cursor-pointer'/>
+                  </a>
+                </Fade>
+              </div>
+          </div>
+          <div className='sm:w-1/2 w-full sm:h-4/5 h-2/5 px-2 flex justify-center items-center'>
+            <Fade direction='right' triggerOnce={true}>
+              <img src={profilePic} alt="Profile Picture"  className='object-cover sm:h-96 sm:w-96 h-48 w-48 rounded-full'/>
+            </Fade>
+          </div>
+          
+        </div>
+    </div>
+    </Element>
+    </>
+  )
+}
+
+export default Hero     
